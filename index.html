@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aayush Kumar | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080b14;
+            color: #f1f5f9;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #101624;
+            border-bottom: 1px solid #293246;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #22d3ee;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav ul a {
+            color: #cbd5e1;
+        }
+
+        nav ul a:hover {
+            color: #22d3ee;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: none;
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            padding: 70px 10%;
+            background: radial-gradient(
+                circle at 80% 40%, #25204b, #080b14 55%
+            );
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .tag {
+            color: #22d3ee;
+            font-size: 13px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(36px, 5vw, 60px);
+            line-height: 1.2;
+            margin: 18px 0;
+        }
+
+        h1 span {
+            color: #22d3ee;
+        }
+
+        .hero h2 {
+            color: #c4b5fd;
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        .description {
+            color: #a4afc2;
+            max-width: 700px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 11px 22px;
+            border-radius: 7px;
+            background: #8b5cf6;
+            border: 1px solid #8b5cf6;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: #22d3ee;
+            color: #22d3ee;
+        }
+
+        .visual {
+            width: 250px;
+            height: 250px;
+            flex-shrink: 0;
+            border: 2px solid #8b5cf6;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #15172b;
+            box-shadow: 0 0 55px #8b5cf633;
+        }
+
+        .visual strong {
+            font-size: 75px;
+            color: #22d3ee;
+        }
+
+        .visual p {
+            color: #a4afc2;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        section:not(.hero) {
+            padding: 75px 10%;
+            text-align: center;
+        }
+
+        .dark {
+            background: #101624;
+            border-top: 1px solid #293246;
+            border-bottom: 1px solid #293246;
+        }
+
+        section h2 {
+            font-size: 34px;
+            margin: 12px 0 25px;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: auto;
+            color: #a4afc2;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 35px;
+            text-align: left;
+        }
+
+        .card {
+            padding: 25px;
+            background: #151d2c;
+            border: 1px solid #293246;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #8b5cf6;
+        }
+
+        .card h3 {
+            color: #22d3ee;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #a4afc2;
+        }
+
+        .tech {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #c4b5fd !important;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .contact-links a {
+            color: #22d3ee;
+            border: 1px solid #22d3ee;
+            border-radius: 7px;
+            padding: 10px 18px;
+        }
+
+        footer {
+            padding: 22px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            background: #060910;
+            color: #a4afc2;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #22d3ee;
+        }
+
+        @media (max-width: 760px) {
+            nav {
+                flex-wrap: wrap;
+                padding: 18px 6%;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding-top: 18px;
+                gap: 12px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 60px 7%;
+            }
+
+            .visual {
+                width: 200px;
+                height: 200px;
+                align-self: center;
+            }
+
+            .visual strong {
+                font-size: 60px;
+            }
+
+            section:not(.hero) {
+                padding: 60px 7%;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#home" class="logo">Aayush.</a>
+
+        <button class="menu-btn" id="menu-btn"
+                aria-label="Toggle navigation"
+                aria-expanded="false">☰</button>
+
+        <ul id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="tag">WELCOME TO MY PORTFOLIO</p>
+                <h1>Hi, I'm <span>Aayush Kumar</span></h1>
+                <h2>CSE Student | Aspiring Developer</h2>
+
+                <p class="description">
+                    I am a Computer Science Engineering student specializing
+                    in Data Science. I love programming, exploring new
+                    technologies, and building digital solutions.
+                </p>
+
+                <div class="buttons">
+                    <a href="#projects" class="btn">View Projects</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+
+            <div class="visual">
+                <strong>&lt;/&gt;</strong>
+                <p>LEARN · BUILD · GROW</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <p class="tag">INTRODUCTION</p>
+            <h2>About Me</h2>
+            <p class="about-text">
+                I am a B.Tech Computer Science Engineering student
+                specializing in Data Science. I am interested in software
+                development, web technologies, and data analysis.
+                I continuously work on improving my programming skills
+                and creating projects that solve real-world problems.
+            </p>
+        </section>
+
+        <section id="skills" class="dark">
+            <p class="tag">MY EXPERTISE</p>
+            <h2>Skills</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Programming</h3>
+                    <p>C, Python fundamentals, problem-solving and DSA.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript and responsive websites.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Data Science</h3>
+                    <p>Statistics, data analysis and visualization basics.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Developer Tools</h3>
+                    <p>Git, GitHub and Visual Studio Code.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <p class="tag">MY WORK</p>
+            <h2>Projects</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Personal Portfolio</h3>
+                    <p>A personal website to showcase my profile and work.</p>
+                    <p class="tech">HTML · CSS · JavaScript</p>
+                </div>
+
+                <div class="card">
+                    <h3>Smart Fitness Tracker</h3>
+                    <p>A C application concept for BMI, fitness goals,
+                       and progress tracking.</p>
+                    <p class="tech">C · File Handling</p>
+                </div>
+
+                <div class="card">
+                    <h3>College Department Website</h3>
+                    <p>A website for displaying department information
+                       and academic resources.</p>
+                    <p class="tech">HTML · CSS</p>
+                </div>
+
+                <div class="card">
+                    <h3>More Projects</h3>
+                    <p>I am continuously learning and developing new
+                       projects to strengthen my skills.</p>
+                    <p class="tech">Learning · Building · Improving</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="dark">
+            <p class="tag">GET IN TOUCH</p>
+            <h2>Contact Me</h2>
+            <p class="about-text">
+                Have a project idea or want to collaborate?
+                Feel free to connect with me.
+            </p>
+
+            <div class="contact-links">
+                <a href="mailto:your-email@example.com">Email Me</a>
+                <a href="https://github.com/Aayush7979"
+                   target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a href="https://www.linkedin.com/"
+                   target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> Aayush Kumar. All rights reserved.</p>
+        <a href="#home">Back to Top ↑</a>
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById("menu-btn");
+        const navLinks = document.getElementById("nav-links");
+
+        menuButton.addEventListener("click", function () {
+            const open = navLinks.classList.toggle("active");
+            menuButton.setAttribute("aria-expanded", String(open));
+        });
+
+        document.querySelectorAll("#nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+                menuButton.setAttribute("aria-expanded", "false");
+            });
+        });
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
